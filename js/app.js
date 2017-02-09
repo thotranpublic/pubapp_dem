@@ -101,7 +101,7 @@
 
         $rootScope.YEAR = "2017";
 
-        $rootScope.backEndUrl = "http://localhost:8888/";
+        $rootScope.backEndUrl = "https://localhost:8888/";
 
         $scope.scrollToCustomPos = function(position) {
 	        var pos = position;
@@ -118,15 +118,15 @@
 	.service('articleListService', ['$http', '$rootScope', function($http, $rootScope) {
 	    
 	    function getAllArticles() {
-	    	return $http.get("http://localhost:8888/api/articles", {});
+	    	return $http.get("https://localhost:8888/api/articles", {});
 	    }
 
 	    function getComments() {
-	    	return $http.get("http://localhost:8888/api/comments", {});
+	    	return $http.get("https://localhost:8888/api/comments", {});
 	    }
 
 	    function uploadComment(comment) {
-	    	return $http.post("http://localhost:8888/api/comments", comment, {});
+	    	return $http.post("https://localhost:8888/api/comments", comment, {});
 	    }
 
 	    function setActiveArticle(article) {
