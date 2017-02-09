@@ -4,14 +4,15 @@
 		<div class="article-pod article-details">
             <div class="article-top">
                 <a href="#">
-                    <img src="{{article.author_pic}}" alt="" />
+                    <img src="img/articles/authors/author.jpg" alt="" />
                 </a>
                 <div class="article-title">
-                    <a href="#">{{article.author}}</a>
+                    <a href="#">Rebecca Manning</a>
                     <br/>
                     <div class="date_details">
-                        {{convertToReadableDate(article.date_published)}}<br/>
-                        {{article.time_published}}pm
+                        Sunday Feb 05, 2017
+                        <br/>
+                        12:10pm
                     </div>
                 </div>
             </div>
@@ -24,7 +25,7 @@
                         <source class="full-article-img" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="{{article.intro}}"/>
                         <source class="full-article-img" srcset="img/articles/ducks_md.jpg" media="(max-width: 500px)" title="{{article.intro}}"/>
                         <source class="full-article-img" srcset="img/articles/ducks_lg.jpg" media="(max-width: 500px)" title="{{article.intro}}"/>
-                        <img class="full-article-img" src="{{article.picture}}" />
+                        <img class="full-article-img" src="img/articles/ducks.jpg" />
                     </picture>
                 </div>
                 <div class="article-footer">
@@ -33,6 +34,12 @@
                             <span class="glyphicon glyphicon-thumbs-up"></span>                  
                         </button>
                         <span class="label label-default" ng-if="article.thumbsUp">You liked this</span>
+                    </div>
+                    <div class="article-font-select">
+                        <p class="font-size-label">Font size:</p>
+                        <p id="font-size"></p>
+                        <button class="btn btn-md" id="down" ng-click="decrementFont()">-</button>
+                        <button class="btn btn-md" id="up" ng-click="incrementFont()">+</button>
                     </div>
                     <div class="article-comments">
                         <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
@@ -44,10 +51,14 @@
             </div>
 
             <!-- START ARTICLE CONTENT -->
-            <div class="article-main-content">
+            <div class="article-main-content" style="font-size: {{fontSize}}px;">
             	<ng-include src="'views/partials/article_content.html'"></ng-include>
             </div>
             <!-- END ARTICLE CONTENT -->
+
+            <div class="" style="margin-top: 40px;">
+                Sunday Feb 05, 2017 12:10pm
+            </div>
 		</div>
 	</div>
 

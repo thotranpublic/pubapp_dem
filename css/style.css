@@ -12,7 +12,7 @@ to prevent collapsing during animation*/
 
 .ui-view-container {
   position: relative;
-  font-family: 'Lato', sans-serif; }
+  font-family: 'Oxygen', sans-serif; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
@@ -58,6 +58,10 @@ to prevent collapsing during animation*/
   padding: 15px 0; }
 
 /************************** GENERAL *********************/
+.h1, .h2, .h3, .h4, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oxygen', sans-serif !important;
+  font-weight: 300; }
+
 .affix {
   top: 50px;
   width: 100%; }
@@ -72,11 +76,11 @@ to prevent collapsing during animation*/
   color: #A9A9A9 !important; }
 
 .btn.btn-primary {
-  background-color: #02B875 !important;
+  background-color: #009688 !important;
   color: white !important; }
   .btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active {
-    background-color: #b81d02 !important;
-    color: white !important; }
+    background-color: #e6cf8b !important;
+    color: black !important; }
 
 .margin-center {
   margin: 0 auto; }
@@ -118,13 +122,21 @@ img {
   /* IE6-9 */
   -webkit-filter: grayscale(0%);
   /* Chrome 19+ & Safari 6+ */
-  -webkit-transition: all .6s ease;
+  -webkit-transition: all 2s ease;
   /* Fade to color for Chrome and Safari */
   -webkit-backface-visibility: hidden;
   /* Fix for transition flickering */ }
   img:hover {
     filter: none;
-    -webkit-filter: grayscale(100%); }
+    -webkit-filter: grayscale(50%); }
+
+a, a:focus {
+  color: black !important;
+  text-decoration: none; }
+
+a:hover {
+  color: #009688 !important;
+  text-decoration: none; }
 
 /************************** TOP BAR *********************/
 .navbar {
@@ -137,6 +149,9 @@ img {
   border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
   padding-top: 4px !important;
   background-color: white !important; }
+
+.themes-bar ul li a:hover {
+  color: #009688 !important; }
 
 .top-bar {
   min-height: 65px; }
@@ -151,7 +166,7 @@ img {
 .site-title {
   display: inline;
   vertical-align: middle;
-  font-family: 'Poiret One', cursive; }
+  font-family: 'Poiret One', cursive !important; }
 
 .navbar-brand {
   padding-left: 10px;
@@ -160,7 +175,7 @@ img {
 .navbar-right {
   color: #A9A9A9 !important; }
   .navbar-right li:hover {
-    color: black; }
+    color: #009688 !important; }
 
 .top-container {
   padding-left: 12%;
@@ -180,12 +195,12 @@ img {
   #themesBar {
     display: none; } }
 
-#site_title:after {
+#themesBar li:after {
   content: '';
   position: absolute;
   height: 2px;
-  width: 100%;
-  left: 0;
+  width: 90%;
+  margin: 0 auto;
   bottom: 0;
   visibility: hidden;
   background-color: #009688;
@@ -195,7 +210,7 @@ img {
   -ms-transform: scaleX(0);
   transform: scaleX(0); }
 
-#site_title:hover:after {
+#themesBar li:hover:after {
   visibility: visible;
   -webkit-transform: scaleX(1);
   -ms-transform: scaleX(1);
@@ -215,9 +230,12 @@ input::-webkit-search-cancel-button {
   display: none; }
 
 input[type=search] {
-  background: #fafafa url("../img/search-icon.png") no-repeat 9px center;
+  background: #fafafa url("../img/search-icon.png") no-repeat 5px center;
   border: solid 1px #ccc;
-  padding: 9px 10px 9px 32px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   width: 55px;
   -webkit-border-radius: 9em;
   -moz-border-radius: 9em;
@@ -227,8 +245,23 @@ input[type=search] {
   transition: all .5s;
   margin-top: 4px; }
 
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type=search] {
+    padding-left: 10px !important;
+    padding-right: 6px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important; } }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  input[type=search] {
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px; } }
+
 input[type=search]:focus {
   width: 130px;
+  padding-left: 30px !important;
   background-color: #fff;
   border-color: #66CC75;
   -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
@@ -381,3 +414,15 @@ hgroup {
     #return-to-top:hover i {
       color: #fff;
       top: 5px; }
+
+.fa-facebook {
+  color: #3b5998 !important; }
+
+.fa-twitter {
+  color: #0084b4 !important; }
+
+.fa-linkedin {
+  color: #dd5143 !important; }
+
+.fa-github {
+  color: #800080 !important; }

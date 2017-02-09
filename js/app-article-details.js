@@ -3,6 +3,14 @@ angular.module('articledetails', [])
 function($scope, $rootScope, $state, $timeout, articleListService, utilService) {
 
 	$scope.wordsLeft = 120;
+	$scope.fontSize = 18;
+
+	$scope.incrementFont = function() {
+		$scope.fontSize += 1;
+	};
+	$scope.decrementFont = function() {
+		$scope.fontSize -= 1;
+	};
 
 	$scope.getArticle = function() {
 		$scope.article = articleListService.getActiveArticle();

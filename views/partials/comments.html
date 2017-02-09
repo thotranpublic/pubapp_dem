@@ -17,25 +17,79 @@
 
 		<div class="comments-main">
 			<ul class="comments-list">
-				<li ng-animate="'animate'" ng-repeat="comment in comments | orderBy: 'comment.date'">
+				<!-- ngRepeat: comment in comments | orderBy: 'comment.date' --><li ng-animate="'animate'" ng-repeat="comment in comments | orderBy: 'comment.date'" class="ng-scope">
 					<div class="comment-box">
 						<div class="comment-avatar">
-							<img src="img/articles/avatar.png" alt="Avatar for {{comment.firstName}} {{comment.lastName}}">
+							<img src="img/articles/avatar.png" alt="Avatar for John Smith">
 						</div>
 						<div class="comment-content">
 							<div class="comment-header">
-								<a href="#">{{comment.firstName}} {{comment.lastName}}</a>
+								<a href="#" class="ng-binding">John Smith</a>
 								
-								<span class="comment-email">&ensp;{{comment.email}}</span>
+								<span class="comment-email ng-binding"> jsmith@gmail.com</span>
 
-								<span class="pull-right">&ensp;{{convertToReadableDate(comment.date.toDateString())}} {{comment.time}}</span>
+								<span class="pull-right ng-binding"> Monday Feb 06, 2017 12:10</span>
 							</div>
-							<div class="comment-content">
-								{{comment.comment}}
+							<div class="comment-content ng-binding">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
 							</div>
 						</div>
 					</div>
-				</li>
+				</li><!-- end ngRepeat: comment in comments | orderBy: 'comment.date' --><li ng-animate="'animate'" ng-repeat="comment in comments | orderBy: 'comment.date'" class="ng-scope">
+					<div class="comment-box">
+						<div class="comment-avatar">
+							<img src="img/articles/avatar.png" alt="Avatar for Lisa Forsworth">
+						</div>
+						<div class="comment-content">
+							<div class="comment-header">
+								<a href="#" class="ng-binding">Lisa Forsworth</a>
+								
+								<span class="comment-email ng-binding"> lforsworth@gmail.com</span>
+
+								<span class="pull-right ng-binding"> Thursday Jan 19, 2017 11:10</span>
+							</div>
+							<div class="comment-content ng-binding">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+							</div>
+						</div>
+					</div>
+				</li><!-- end ngRepeat: comment in comments | orderBy: 'comment.date' --><li ng-animate="'animate'" ng-repeat="comment in comments | orderBy: 'comment.date'" class="ng-scope">
+					<div class="comment-box">
+						<div class="comment-avatar">
+							<img src="img/articles/avatar.png" alt="Avatar for Igor Lavitz">
+						</div>
+						<div class="comment-content">
+							<div class="comment-header">
+								<a href="#" class="ng-binding">Igor Lavitz</a>
+								
+								<span class="comment-email ng-binding"> ilavtitz@gmail.com</span>
+
+								<span class="pull-right ng-binding"> Monday Jan 02, 2017 09:11</span>
+							</div>
+							<div class="comment-content ng-binding">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+							</div>
+						</div>
+					</div>
+				</li><!-- end ngRepeat: comment in comments | orderBy: 'comment.date' --><li ng-animate="'animate'" ng-repeat="comment in comments | orderBy: 'comment.date'" class="ng-scope">
+					<div class="comment-box">
+						<div class="comment-avatar">
+							<img src="img/articles/avatar.png" alt="Avatar for Cassandra Chan">
+						</div>
+						<div class="comment-content">
+							<div class="comment-header">
+								<a href="#" class="ng-binding">Cassandra Chan</a>
+								
+								<span class="comment-email ng-binding"> cchan@gmail.com</span>
+
+								<span class="pull-right ng-binding"> Thursday Dec 01, 2016 07:11</span>
+							</div>
+							<div class="comment-content ng-binding">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+							</div>
+						</div>
+					</div>
+				</li><!-- end ngRepeat: comment in comments | orderBy: 'comment.date' -->
 			</ul>
 
 			<div class="widget-area no-padding blank">
@@ -56,7 +110,7 @@
 			                <input class="form-control" type="email" name='email' id="email" required ng-model="newComment.email" />
 			            </div>
 			            <div class="col-sm-12 form-group comment-footer">
-				            <label class="form-group" id="leaveCommentLabel">Your comment:</label>
+				            <label class="form-group" id="leaveCommentLabel">Comment:</label>
 							<textarea id="comment_body" type="text" placeholder="Pri cu inani inermis vivendo, duo in elitr definitionem." ng-keyup="checkWordLen(this);" name="commentBody" required ng-model="newComment.comment"></textarea>
 
 							<div class="bottom">
