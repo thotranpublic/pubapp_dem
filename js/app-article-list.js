@@ -28,7 +28,7 @@ function($scope, $rootScope, $state, articleListService, utilService) {
 			});
 	};
 
-	$scope.getArticles();
+	//$scope.getArticles();
 
 	$scope.convertToReadableDate = function(dateStr) {
 		return utilService.convertToReadableDate(dateStr);
