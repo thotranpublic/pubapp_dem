@@ -1,0 +1,67 @@
+<div class="container">
+<div class="col-xs-12 col-md-10 col-md-offset-1">
+	<div class="row">
+		<div class="article-pod article-details">
+            <div class="article-top">
+                <a href="#">
+                    <img src="{{article.author_pic}}" alt="" />
+                </a>
+                <div class="article-title">
+                    <a href="#">{{article.author}}</a>
+                    <br/>
+                    <div class="date_details">
+                        {{convertToReadableDate(article.date_published)}}<br/>
+                        {{article.time_published}}pm
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+            	<div class="article-intro">
+                    {{article.intro}}
+                </div>
+                <div class="article-picture">
+                    <picture>
+                        <source class="full-article-img" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="{{article.intro}}"/>
+                        <source class="full-article-img" srcset="img/articles/ducks_md.jpg" media="(max-width: 500px)" title="{{article.intro}}"/>
+                        <source class="full-article-img" srcset="img/articles/ducks_lg.jpg" media="(max-width: 500px)" title="{{article.intro}}"/>
+                        <img class="full-article-img" src="{{article.picture}}" />
+                    </picture>
+                </div>
+                <div class="article-footer">
+                    <div class="article-likes">
+                        <button type="button" class="btn btn-primary"  title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>                  
+                        </button>
+                        <span class="label label-default" ng-if="article.thumbsUp">You liked this</span>
+                    </div>
+                    <div class="article-comments">
+                        <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
+                            <span class="glyphicon glyphicon-comment">&ensp;
+                            </span> <span class="badge">{{article.num_comments}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- START ARTICLE CONTENT -->
+            <div class="article-main-content">
+            	<ng-include src="'views/partials/article_content.html'"></ng-include>
+            </div>
+            <!-- END ARTICLE CONTENT -->
+		</div>
+	</div>
+
+    <hr>
+
+    <div class="placeholder">
+    </div>
+
+	<!-- START COMMENTS -->
+    <ng-include src="'views/partials/comments.html'"></ng-include>
+	<!-- END COMMENTS -->
+</div>
+</div>
+
+<!-- START FOOTER -->
+<ng-include src="'views/partials/footer.html'"></ng-include>
+<!-- END FOOTER -->

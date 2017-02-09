@@ -1,0 +1,61 @@
+<!-- TOP BAR -->
+<nav class="navbar nav-bar-style top-bar color-black" id="topBar" role="navigation">
+  <div class="top-container">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="home" id="site_title">
+        <img src="img/logo.svg" alt="" id="brandLogo"><span>&ensp;<h1 class="site-title">PUBAPP</h1></span>
+      </a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarTop" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarTop">
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a ui-sref="register" title="Register">Register</a></li>
+        <li><a ui-sref="login" title="Login">Login</a></li>
+        <li class="searchButtonLi" title="Search">
+          <form id="searchBar">
+            <input id="searchInput" type="search" placeholder="Search">
+          </form>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- THEMES BAR -->
+<nav class="navbar themes-bar nav-bar-style text-left-align card-1" id="themesBar">
+  <div class="top-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarBottom" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <script type="text/ng-template" id="nav-item.html">
+      <span ng-if="page.name && !page.url">{{page.name}}</span>
+      <a ng-if="page.name && page.url && !(page.subPages && page.subPages.length)" href="{{page.url}}">{{page.name}}</a>
+      <a ng-if="page.name && page.url && page.subPages && page.subPages.length" href="{{page.url}}" data-toggle="dropdown" role="button" aria-expanded="false"
+      class="dropdown-toggle">{{page.name}} <span class="caret"></span>
+      </a>
+      <ul ng-if="page.subPages && page.subPages.length" class="dropdown-menu" role="menu">
+        <li ng-class="{'divider': !page.name && !page.url, 'dropdown-header': page.name && !page.url, active: isUrl(page.url)}" ng-repeat="page in page.subPages" ng-include="'nav-item.html'">
+        </li>
+      </ul>
+    </script>
+    <div id="navbar" class="collapse navbar-collapse" id="navbarBottom">
+      <ul class="nav navbar-nav themesBar">
+        <li ng-repeat="page in themesList" ng-class="{active: isUrl(page.url)}" ng-include="'nav-item.html'">
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

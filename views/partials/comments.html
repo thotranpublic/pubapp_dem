@@ -1,0 +1,74 @@
+
+<div class="row">
+    <div class="comments-container">
+		<h2 in-view="$inview && getComments()">Comments</h2>
+
+		<div uib-alert ng-hide="!alert" ng-class="'custom-alert alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}
+			<a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		</div>
+
+
+		<button class="btn btn-lg btn-block comment-view-ctrl no-animate" ng-show="showing">
+			<i class="fa fa-spinner fa-spin fa-fw"></i>&ensp;Retrieving comments..
+		.</button> 
+
+		<!--
+		<button class="btn btn-lg btn-block comment-view-ctrl no-animate" ng-show="showing" ng-click="hideComments();"><i class="fa fa-minus-square-o" aria-hidden="true"></i>&ensp;Hide comments</button> -->
+
+		<div class="comments-main">
+			<ul class="comments-list">
+				<li ng-animate="'animate'" ng-repeat="comment in comments | orderBy: 'comment.date'">
+					<div class="comment-box">
+						<div class="comment-avatar">
+							<img src="img/articles/avatar.png" alt="Avatar for {{comment.firstName}} {{comment.lastName}}">
+						</div>
+						<div class="comment-content">
+							<div class="comment-header">
+								<a href="#">{{comment.firstName}} {{comment.lastName}}</a>
+								
+								<span class="comment-email">&ensp;{{comment.email}}</span>
+
+								<span class="pull-right">&ensp;{{convertToReadableDate(comment.date.toDateString())}} {{comment.time}}</span>
+							</div>
+							<div class="comment-content">
+								{{comment.comment}}
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+			<div class="widget-area no-padding blank">
+				<div class="status-upload">
+					<form name="commentUploadForm">
+						<h3 class="form-group">Leave a comment</h3>
+
+						<div class="col-sm-6 form-group label-placeholder is-empty">
+			                <label for="firstName" class="control-label">First name</label>
+			                <input class="form-control" type="text" id="fName" required ng-model="newComment.firstName" />
+			            </div>
+			            <div class="col-sm-6 form-group label-placeholder is-empty">
+			                <label for="lastName" class="control-label">Last name</label>
+			                <input class="form-control" type="text" id="lName" required ng-model="newComment.lastName" />
+			            </div>
+			            <div class="col-sm-12 form-group label-placeholder is-empty">
+			                <label for="email" class="control-label">E-mail address</label>
+			                <input class="form-control" type="email" name='email' id="email" required ng-model="newComment.email" />
+			            </div>
+			            <div class="col-sm-12 form-group comment-footer">
+				            <label class="form-group" id="leaveCommentLabel">Your comment:</label>
+							<textarea id="comment_body" type="text" placeholder="Pri cu inani inermis vivendo, duo in elitr definitionem." ng-keyup="checkWordLen(this);" name="commentBody" required ng-model="newComment.comment"></textarea>
+
+							<div class="bottom">
+								<span style="vertical-align: middle;">
+									{{wordsLeft}} words remaining.
+								</span>
+								<button type="submit" class="btn btn-success green" ng-click="uploadNewComment()" ng-disabled="commentUploadForm.$invalid || wordsLeft > 120"><i class="fa fa-share"></i> submit</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

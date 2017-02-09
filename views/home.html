@@ -1,0 +1,117 @@
+<div class="parallax_container">
+  <!-- image is open source, available at: https://pixabay.com/en/typewriter-book-notebook-paper-801921/ -->
+  <div class="parallax inset-shadow" id="homepageParallax">   
+    <div class="col-sm-12 col-md-12 col-lg-12 full-height">
+      <div class="inner-content">
+        <hgroup>
+          Praesent volutpat viverra condimentum maecenas.
+          <button class="btn btn-primary" title="Get started">Get started</button>
+        </hgroup>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container main-content">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="panel panel-default article-pod" ng-repeat="article in articles">
+            <div class="article-top">
+                <a href="#">
+                    <img src="{{article.author_pic}}" alt="" />
+                </a>
+                <div class="article-title">
+                    <a href="#">{{article.author}}</a>
+                    <br/>
+                    <div class="date_details">
+                        {{convertToReadableDate(article.date_published)}}<br/>
+                        {{article.time_published}}pm
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="article-picture">
+                    <a ui-sref="article_details">
+                        <picture>
+                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="{{article.intro}}"/>
+                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="{{article.intro}}"/>
+                            <img class="grayscale" src="{{article.picture}}" />
+                        </picture>
+                    </a>
+                </div>
+                <div class="article-intro">
+                    <a href="#" ui-sref="article_details">{{article.intro}}</a>
+                </div>
+                <div class="article-read-more">
+                    <a ui-sref="article_details">read more...</a>
+                </div>
+                <div class="article-footer">
+                    <div class="article-likes">
+                        <button type="button" class="btn btn-primary"  title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>                  
+                        </button>
+                        <span class="label label-default" ng-if="article.thumbsUp">You liked this</span>
+                    </div>
+                    <div class="article-comments">
+                        <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
+                            <span class="glyphicon glyphicon-comment">&ensp;
+                            </span> <span class="badge">{{article.num_comments}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- START PAGINATION -->
+        <div class="center">
+          <ul class="pagination">
+            <li><a href="#">«</a></li>
+            <li><a class="active"  href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">»</a></li>
+          </ul>
+        </div>
+        <!-- END PAGINATION -->
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 sidebar">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Mucius antiopam antiatum</h4> 
+            </div>
+        <div class="panel-body">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam scelerisque turpis eget porta tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris lacinia turpis aliquam, tempus risus vitae, euismod metus. Ut eu eros urna. Phasellus feugiat tincidunt nisi at varius. In quis diam dapibus, vehicula lacus nec, facilisis ex. Fusce venenatis magna sit amet leo efficitur sagittis. In tincidunt posuere tempor.
+            </p>
+            <hr>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam scelerisque turpis eget porta tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris lacinia turpis aliquam, tempus risus vitae, euismod metus. Ut eu eros urna. Phasellus feugiat tincidunt nisi at varius. In quis diam dapibus, vehicula lacus nec, facilisis ex. Fusce venenatis magna sit amet leo efficitur sagittis. In tincidunt posuere tempor.
+            </p>
+        </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 sidebar">
+        <div class="panel panel-default">
+            <div class="panel-body social-sidebar" data-spy="affix" data-offset-top="970">
+                <ul>
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-github"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+</div>
+
+
+<!-- START FOOTER -->
+<ng-include src="'views/partials/footer.html'"></ng-include>
+<!-- END FOOTER -->
