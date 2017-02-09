@@ -12,60 +12,465 @@
   </div>
 </div>
 
-<div class="container main-content">
+<div class="container main-content ng-scope">
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-        <div class="panel panel-default article-pod" ng-repeat="article in articles">
+        <!-- ngRepeat: article in articles --><div class="panel panel-default article-pod ng-scope" ng-repeat="article in articles">
             <div class="article-top">
                 <a href="#">
-                    <img src="{{article.author_pic}}" alt="" />
+                    <img src="img/articles/authors/author.jpg" alt="">
                 </a>
                 <div class="article-title">
-                    <a href="#">{{article.author}}</a>
-                    <br/>
-                    <div class="date_details">
-                        {{convertToReadableDate(article.date_published)}}<br/>
-                        {{article.time_published}}pm
+                    <a href="#" class="ng-binding">Rebecca Manning</a>
+                    <br>
+                    <div class="date_details ng-binding">
+                        Sunday Feb 05, 2017<br>
+                        12:10pm
                     </div>
                 </div>
             </div>
             <div class="panel-body">
                 <div class="article-picture">
-                    <a ui-sref="article_details">
+                    <a ui-sref="article_details" href="#/article_details">
                         <picture>
-                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="{{article.intro}}"/>
-                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="{{article.intro}}"/>
-                            <img class="grayscale" src="{{article.picture}}" />
+                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="Nulla suscipit eu enim quis dignissim">
+                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="Nulla suscipit eu enim quis dignissim">
+                            <img class="grayscale" src="img/articles/ducks.jpg">
                         </picture>
                     </a>
                 </div>
                 <div class="article-intro">
-                    <a href="#" ui-sref="article_details">{{article.intro}}</a>
+                    <a href="#/article_details" ui-sref="article_details" class="ng-binding">Nulla suscipit eu enim quis dignissim</a>
                 </div>
                 <div class="article-read-more">
-                    <a ui-sref="article_details">read more...</a>
+                    <a ui-sref="article_details" href="#/article_details">read more...</a>
                 </div>
                 <div class="article-footer">
                     <div class="article-likes">
-                        <button type="button" class="btn btn-primary"  title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                        <button type="button" class="btn btn-primary" title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
                             <span class="glyphicon glyphicon-thumbs-up"></span>                  
                         </button>
-                        <span class="label label-default" ng-if="article.thumbsUp">You liked this</span>
+                        <!-- ngIf: article.thumbsUp -->
                     </div>
                     <div class="article-comments">
                         <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
-                            <span class="glyphicon glyphicon-comment">&ensp;
-                            </span> <span class="badge">{{article.num_comments}}</span>
+                            <span class="glyphicon glyphicon-comment"> 
+                            </span> <span class="badge ng-binding">7</span>
                         </button>
                     </div>
                 </div>
             </div>
-        </div>
+        </div><!-- end ngRepeat: article in articles --><div class="panel panel-default article-pod ng-scope" ng-repeat="article in articles">
+            <div class="article-top">
+                <a href="#">
+                    <img src="img/articles/authors/author.jpg" alt="">
+                </a>
+                <div class="article-title">
+                    <a href="#" class="ng-binding">Rebecca Manning</a>
+                    <br>
+                    <div class="date_details ng-binding">
+                        Sunday Feb 05, 2017<br>
+                        15:58pm
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="article-picture">
+                    <a ui-sref="article_details" href="#/article_details">
+                        <picture>
+                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="Nulla suscipit eu enim quis dignissim">
+                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="Nulla suscipit eu enim quis dignissim">
+                            <img class="grayscale" src="img/articles/ducks.jpg">
+                        </picture>
+                    </a>
+                </div>
+                <div class="article-intro">
+                    <a href="#/article_details" ui-sref="article_details" class="ng-binding">Nulla suscipit eu enim quis dignissim</a>
+                </div>
+                <div class="article-read-more">
+                    <a ui-sref="article_details" href="#/article_details">read more...</a>
+                </div>
+                <div class="article-footer">
+                    <div class="article-likes">
+                        <button type="button" class="btn btn-primary" title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>                  
+                        </button>
+                        <!-- ngIf: article.thumbsUp -->
+                    </div>
+                    <div class="article-comments">
+                        <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
+                            <span class="glyphicon glyphicon-comment"> 
+                            </span> <span class="badge ng-binding">3</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end ngRepeat: article in articles --><div class="panel panel-default article-pod ng-scope" ng-repeat="article in articles">
+            <div class="article-top">
+                <a href="#">
+                    <img src="img/articles/authors/author.jpg" alt="">
+                </a>
+                <div class="article-title">
+                    <a href="#" class="ng-binding">Rebecca Manning</a>
+                    <br>
+                    <div class="date_details ng-binding">
+                        Sunday Feb 05, 2017<br>
+                        12:10pm
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="article-picture">
+                    <a ui-sref="article_details" href="#/article_details">
+                        <picture>
+                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="Nulla suscipit eu enim quis dignissim">
+                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="Nulla suscipit eu enim quis dignissim">
+                            <img class="grayscale" src="img/articles/ducks.jpg">
+                        </picture>
+                    </a>
+                </div>
+                <div class="article-intro">
+                    <a href="#/article_details" ui-sref="article_details" class="ng-binding">Nulla suscipit eu enim quis dignissim</a>
+                </div>
+                <div class="article-read-more">
+                    <a ui-sref="article_details" href="#/article_details">read more...</a>
+                </div>
+                <div class="article-footer">
+                    <div class="article-likes">
+                        <button type="button" class="btn btn-primary" title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>                  
+                        </button>
+                        <!-- ngIf: article.thumbsUp -->
+                    </div>
+                    <div class="article-comments">
+                        <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
+                            <span class="glyphicon glyphicon-comment"> 
+                            </span> <span class="badge ng-binding">1</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end ngRepeat: article in articles --><div class="panel panel-default article-pod ng-scope" ng-repeat="article in articles">
+            <div class="article-top">
+                <a href="#">
+                    <img src="img/articles/authors/author.jpg" alt="">
+                </a>
+                <div class="article-title">
+                    <a href="#" class="ng-binding">Rebecca Manning</a>
+                    <br>
+                    <div class="date_details ng-binding">
+                        Sunday Feb 05, 2017<br>
+                        12:10pm
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="article-picture">
+                    <a ui-sref="article_details" href="#/article_details">
+                        <picture>
+                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="Nulla suscipit eu enim quis dignissim">
+                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="Nulla suscipit eu enim quis dignissim">
+                            <img class="grayscale" src="img/articles/ducks.jpg">
+                        </picture>
+                    </a>
+                </div>
+                <div class="article-intro">
+                    <a href="#/article_details" ui-sref="article_details" class="ng-binding">Nulla suscipit eu enim quis dignissim</a>
+                </div>
+                <div class="article-read-more">
+                    <a ui-sref="article_details" href="#/article_details">read more...</a>
+                </div>
+                <div class="article-footer">
+                    <div class="article-likes">
+                        <button type="button" class="btn btn-primary" title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>                  
+                        </button>
+                        <!-- ngIf: article.thumbsUp -->
+                    </div>
+                    <div class="article-comments">
+                        <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
+                            <span class="glyphicon glyphicon-comment"> 
+                            </span> <span class="badge ng-binding">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end ngRepeat: article in articles --><div class="panel panel-default article-pod ng-scope" ng-repeat="article in articles">
+            <div class="article-top">
+                <a href="#">
+                    <img src="img/articles/authors/author.jpg" alt="">
+                </a>
+                <div class="article-title">
+                    <a href="#" class="ng-binding">Rebecca Manning</a>
+                    <br>
+                    <div class="date_details ng-binding">
+                        Sunday Feb 05, 2017<br>
+                        12:10pm
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="article-picture">
+                    <a ui-sref="article_details" href="#/article_details">
+                        <picture>
+                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="Nulla suscipit eu enim quis dignissim">
+                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="Nulla suscipit eu enim quis dignissim">
+                            <img class="grayscale" src="img/articles/ducks.jpg">
+                        </picture>
+                    </a>
+                </div>
+                <div class="article-intro">
+                    <a href="#/article_details" ui-sref="article_details" class="ng-binding">Nulla suscipit eu enim quis dignissim</a>
+                </div>
+                <div class="article-read-more">
+                    <a ui-sref="article_details" href="#/article_details">read more...</a>
+                </div>
+                <div class="article-footer">
+                    <div class="article-likes">
+                        <button type="button" class="btn btn-primary" title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>                  
+                        </button>
+                        <!-- ngIf: article.thumbsUp -->
+                    </div>
+                    <div class="article-comments">
+                        <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
+                            <span class="glyphicon glyphicon-comment"> 
+                            </span> <span class="badge ng-binding">8</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end ngRepeat: article in articles --><div class="panel panel-default article-pod ng-scope" ng-repeat="article in articles">
+            <div class="article-top">
+                <a href="#">
+                    <img src="img/articles/authors/author.jpg" alt="">
+                </a>
+                <div class="article-title">
+                    <a href="#" class="ng-binding">Rebecca Manning</a>
+                    <br>
+                    <div class="date_details ng-binding">
+                        Sunday Feb 05, 2017<br>
+                        12:10pm
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="article-picture">
+                    <a ui-sref="article_details" href="#/article_details">
+                        <picture>
+                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="Nulla suscipit eu enim quis dignissim">
+                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="Nulla suscipit eu enim quis dignissim">
+                            <img class="grayscale" src="img/articles/ducks.jpg">
+                        </picture>
+                    </a>
+                </div>
+                <div class="article-intro">
+                    <a href="#/article_details" ui-sref="article_details" class="ng-binding">Nulla suscipit eu enim quis dignissim</a>
+                </div>
+                <div class="article-read-more">
+                    <a ui-sref="article_details" href="#/article_details">read more...</a>
+                </div>
+                <div class="article-footer">
+                    <div class="article-likes">
+                        <button type="button" class="btn btn-primary" title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>                  
+                        </button>
+                        <!-- ngIf: article.thumbsUp -->
+                    </div>
+                    <div class="article-comments">
+                        <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
+                            <span class="glyphicon glyphicon-comment"> 
+                            </span> <span class="badge ng-binding">3</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end ngRepeat: article in articles --><div class="panel panel-default article-pod ng-scope" ng-repeat="article in articles">
+            <div class="article-top">
+                <a href="#">
+                    <img src="img/articles/authors/author.jpg" alt="">
+                </a>
+                <div class="article-title">
+                    <a href="#" class="ng-binding">Rebecca Manning</a>
+                    <br>
+                    <div class="date_details ng-binding">
+                        Sunday Feb 05, 2017<br>
+                        12:10pm
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="article-picture">
+                    <a ui-sref="article_details" href="#/article_details">
+                        <picture>
+                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="Nulla suscipit eu enim quis dignissim">
+                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="Nulla suscipit eu enim quis dignissim">
+                            <img class="grayscale" src="img/articles/ducks.jpg">
+                        </picture>
+                    </a>
+                </div>
+                <div class="article-intro">
+                    <a href="#/article_details" ui-sref="article_details" class="ng-binding">Nulla suscipit eu enim quis dignissim</a>
+                </div>
+                <div class="article-read-more">
+                    <a ui-sref="article_details" href="#/article_details">read more...</a>
+                </div>
+                <div class="article-footer">
+                    <div class="article-likes">
+                        <button type="button" class="btn btn-primary" title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>                  
+                        </button>
+                        <!-- ngIf: article.thumbsUp -->
+                    </div>
+                    <div class="article-comments">
+                        <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
+                            <span class="glyphicon glyphicon-comment"> 
+                            </span> <span class="badge ng-binding">6</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end ngRepeat: article in articles --><div class="panel panel-default article-pod ng-scope" ng-repeat="article in articles">
+            <div class="article-top">
+                <a href="#">
+                    <img src="img/articles/authors/author.jpg" alt="">
+                </a>
+                <div class="article-title">
+                    <a href="#" class="ng-binding">Rebecca Manning</a>
+                    <br>
+                    <div class="date_details ng-binding">
+                        Sunday Feb 05, 2017<br>
+                        12:10pm
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="article-picture">
+                    <a ui-sref="article_details" href="#/article_details">
+                        <picture>
+                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="Nulla suscipit eu enim quis dignissim">
+                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="Nulla suscipit eu enim quis dignissim">
+                            <img class="grayscale" src="img/articles/ducks.jpg">
+                        </picture>
+                    </a>
+                </div>
+                <div class="article-intro">
+                    <a href="#/article_details" ui-sref="article_details" class="ng-binding">Nulla suscipit eu enim quis dignissim</a>
+                </div>
+                <div class="article-read-more">
+                    <a ui-sref="article_details" href="#/article_details">read more...</a>
+                </div>
+                <div class="article-footer">
+                    <div class="article-likes">
+                        <button type="button" class="btn btn-primary" title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>                  
+                        </button>
+                        <!-- ngIf: article.thumbsUp -->
+                    </div>
+                    <div class="article-comments">
+                        <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
+                            <span class="glyphicon glyphicon-comment"> 
+                            </span> <span class="badge ng-binding">2</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end ngRepeat: article in articles --><div class="panel panel-default article-pod ng-scope" ng-repeat="article in articles">
+            <div class="article-top">
+                <a href="#">
+                    <img src="img/articles/authors/author.jpg" alt="">
+                </a>
+                <div class="article-title">
+                    <a href="#" class="ng-binding">Rebecca Manning</a>
+                    <br>
+                    <div class="date_details ng-binding">
+                        Sunday Feb 05, 2017<br>
+                        12:10pm
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="article-picture">
+                    <a ui-sref="article_details" href="#/article_details">
+                        <picture>
+                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="Nulla suscipit eu enim quis dignissim">
+                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="Nulla suscipit eu enim quis dignissim">
+                            <img class="grayscale" src="img/articles/ducks.jpg">
+                        </picture>
+                    </a>
+                </div>
+                <div class="article-intro">
+                    <a href="#/article_details" ui-sref="article_details" class="ng-binding">Nulla suscipit eu enim quis dignissim</a>
+                </div>
+                <div class="article-read-more">
+                    <a ui-sref="article_details" href="#/article_details">read more...</a>
+                </div>
+                <div class="article-footer">
+                    <div class="article-likes">
+                        <button type="button" class="btn btn-primary" title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>                  
+                        </button>
+                        <!-- ngIf: article.thumbsUp -->
+                    </div>
+                    <div class="article-comments">
+                        <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
+                            <span class="glyphicon glyphicon-comment"> 
+                            </span> <span class="badge ng-binding">10</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end ngRepeat: article in articles --><div class="panel panel-default article-pod ng-scope" ng-repeat="article in articles">
+            <div class="article-top">
+                <a href="#">
+                    <img src="img/articles/authors/author.jpg" alt="">
+                </a>
+                <div class="article-title">
+                    <a href="#" class="ng-binding">Rebecca Manning</a>
+                    <br>
+                    <div class="date_details ng-binding">
+                        Sunday Feb 05, 2017<br>
+                        12:10pm
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="article-picture">
+                    <a ui-sref="article_details" href="#/article_details">
+                        <picture>
+                            <source class="grayscale" srcset="img/articles/ducks_sm.jpg" media="(max-width: 300px)" title="Nulla suscipit eu enim quis dignissim">
+                            <source class="grayscale" srcset="img/articles/ducks_md.jpg" media="(max-width: 700px)" title="Nulla suscipit eu enim quis dignissim">
+                            <img class="grayscale" src="img/articles/ducks.jpg">
+                        </picture>
+                    </a>
+                </div>
+                <div class="article-intro">
+                    <a href="#/article_details" ui-sref="article_details" class="ng-binding">Nulla suscipit eu enim quis dignissim</a>
+                </div>
+                <div class="article-read-more">
+                    <a ui-sref="article_details" href="#/article_details">read more...</a>
+                </div>
+                <div class="article-footer">
+                    <div class="article-likes">
+                        <button type="button" class="btn btn-primary" title="I like this!" ng-click="toggleLikeArticle(article);" ng-class="{'selected': article.thumbsUp != null}">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>                  
+                        </button>
+                        <!-- ngIf: article.thumbsUp -->
+                    </div>
+                    <div class="article-comments">
+                        <button type="button" class="btn btn-primary" title="Number of comments" ng-click="getArticleDetails(article);">
+                            <span class="glyphicon glyphicon-comment"> 
+                            </span> <span class="badge ng-binding">2</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end ngRepeat: article in articles -->
 
         <!-- START PAGINATION -->
         <div class="center">
           <ul class="pagination">
             <li><a href="#">«</a></li>
-            <li><a class="active"  href="#">1</a></li>
+            <li><a class="active" href="#">1</a></li>
             <li><a href="#">2</a></li>
             <li><a href="#">3</a></li>
             <li><a href="#">4</a></li>
@@ -95,7 +500,7 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 sidebar">
         <div class="panel panel-default">
-            <div class="panel-body social-sidebar" data-spy="affix" data-offset-top="970">
+            <div class="panel-body social-sidebar affix-top" data-spy="affix" data-offset-top="970">
                 <ul>
                       <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                       <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -107,7 +512,7 @@
         </div>
     </div>
 
-    <hr />
+    <hr>
 
 </div>
 
